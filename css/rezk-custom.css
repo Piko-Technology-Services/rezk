@@ -1,0 +1,202 @@
+/* ==================================================================
+   REZK TYRE LIMITED — brand override layer
+   Loaded AFTER css/style.css so it wins on specificity ties.
+   Palette: Ink #0C0C0C · Asphalt #171A1D · Rezk Gold #F2B705
+            Gold Deep #D69C00 · Concrete #F5F5F3 · Off-white #FFFDF7
+   Type (from template): Barlow (display, 600/700) + Ubuntu (body)
+   Signature motif: repeating diagonal hazard-stripe divider —
+   echoes the caution-tape band on the Rezk Tyre promo banner and
+   is used as a section seam instead of a plain <hr>.
+   ================================================================== */
+
+:root{
+    --ink:#0c0c0c;
+    --asphalt:#171a1d;
+    --asphalt-2:#20242a;
+    --gold:#f2b705;
+    --gold-deep:#d69c00;
+    --concrete:#f5f5f3;
+    --offwhite:#fffdf7;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{ color:#2b2b2b; }
+
+h1,h2,h3,h4,h5,h6{ letter-spacing:.01em; }
+
+/* ---------- Brand color overrides (Bootstrap utility classes) ---------- */
+.text-primary{ color:var(--gold-deep) !important; }
+.bg-primary{ background-color:var(--gold) !important; color:var(--ink) !important; }
+.bg-secondary{ background-color:var(--asphalt) !important; }
+.bg-dark{ background-color:var(--ink) !important; }
+
+.btn-primary{
+    background-color:var(--gold);
+    border-color:var(--gold);
+    color:var(--ink);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+}
+.btn-primary:hover,
+.btn-primary:focus{
+    background-color:var(--ink);
+    border-color:var(--ink);
+    color:var(--gold);
+}
+.btn-secondary{
+    background-color:var(--ink);
+    border-color:var(--ink);
+    color:#fff;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+}
+.btn-secondary:hover,
+.btn-secondary:focus{
+    background-color:var(--gold);
+    border-color:var(--gold);
+    color:var(--ink);
+}
+
+/* ---------- Signature hazard-stripe divider ---------- */
+.tread-divider{
+    height:14px;
+    width:100%;
+    background:repeating-linear-gradient(-45deg, var(--ink) 0 14px, var(--gold) 14px 28px);
+}
+.tread-divider.thin{ height:8px; }
+
+/* ---------- Topbar ---------- */
+.bg-light small,
+.bg-light small a{ color:#4a4a4a; }
+.bg-light .fa-map-marker-alt,
+.bg-light .far.fa-clock,
+.bg-light .fa-phone-alt{ color:var(--gold-deep) !important; }
+.bg-light .btn-sm-square{ border:1px solid rgba(0,0,0,.08); }
+.bg-light .btn-sm-square:hover{ background:var(--gold) !important; color:var(--ink) !important; }
+
+/* ---------- Navbar ---------- */
+.navbar-brand h2{
+    font-weight:700;
+    letter-spacing:.02em;
+}
+.navbar-nav .nav-link{
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    font-size:.92rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover{ color:var(--gold-deep) !important; }
+
+/* ---------- Hero carousel ---------- */
+.carousel-caption h6{
+    letter-spacing:.22em;
+    color:var(--gold);
+}
+.carousel-caption .btn-primary{ margin-right:.5rem; }
+
+/* ---------- Tread strip under hero ---------- */
+.hero-tread-strip{ position:relative; z-index:2; }
+
+/* ---------- Service intro cards ---------- */
+.service-intro-item i{ color:var(--gold-deep) !important; }
+.service-intro-item .border-bottom{ border-color:var(--gold) !important; }
+
+/* ---------- About badge ---------- */
+.about-badge{ background:rgba(12,12,12,.85) !important; }
+.about-badge h1,.about-badge h4{ color:var(--offwhite) !important; }
+.numbered-box{
+    background:var(--concrete) !important;
+    color:var(--ink);
+    font-weight:700;
+}
+
+/* ---------- Fact / stats strip ---------- */
+.fact i,.fact h2{ color:var(--gold) !important; }
+
+/* ---------- Service tabs ---------- */
+.nav-pills .nav-link{
+    background:var(--concrete);
+    border-left:3px solid transparent;
+    border-radius:0;
+}
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover{
+    background:var(--ink) !important;
+    color:#fff;
+    border-left:3px solid var(--gold);
+}
+.nav-pills .nav-link i{ color:var(--gold-deep); }
+.nav-pills .nav-link.active i{ color:var(--gold); }
+.tab-pane .fa-check.text-success{ color:var(--gold-deep) !important; }
+
+/* ---------- Booking form ---------- */
+.booking .bg-primary form input,
+.booking .bg-primary form select,
+.booking .bg-primary form textarea{
+    border-radius:2px;
+}
+.booking .bg-primary .btn-secondary:hover{ background:var(--ink); }
+
+/* ---------- Team ---------- */
+.team-item .bg-light{ border-top:3px solid var(--gold); }
+.team-overlay{
+    background:rgba(12,12,12,.72);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:opacity .3s ease;
+}
+.team-item:hover .team-overlay{ opacity:1; }
+.team-overlay .btn-square{
+    background:var(--gold);
+    color:var(--ink);
+    border-radius:50%;
+}
+.team-overlay .btn-square:hover{ background:var(--offwhite); }
+
+/* ---------- Testimonials ---------- */
+.testimonial-text{ border-top:3px solid var(--gold); position:relative; }
+.testimonial-item img{ border:3px solid var(--gold); }
+
+/* ---------- Page headers (inner pages) ---------- */
+.page-header{ position:relative; }
+.page-header-inner{ background:rgba(12,12,12,.72); }
+.page-header .breadcrumb-item a{ color:var(--gold); }
+.page-header .breadcrumb-item.active{ color:#fff; }
+.page-header .breadcrumb-item+.breadcrumb-item::before{ color:#cfcfcf; }
+
+/* ---------- Footer ---------- */
+.footer{ background-color:var(--asphalt) !important; }
+.footer h4{ font-weight:700; }
+.footer .btn-social{
+    border-color:rgba(242,183,5,.5);
+    color:var(--gold);
+    margin-right:.5rem;
+}
+.footer .btn-social:hover{ background:var(--gold); color:var(--ink); border-color:var(--gold); }
+.footer .btn-link{ color:#cfcfcf; padding-left:0; }
+.footer .btn-link:hover{ color:var(--gold); }
+.footer .copyright{ border-top:1px solid rgba(242,183,5,.15); padding-top:1.2rem; margin-top:1rem; }
+.footer .copyright a{ color:var(--gold); }
+.footer .footer-menu a{ color:#cfcfcf; margin-left:.75rem; }
+.footer .footer-menu a:hover{ color:var(--gold); }
+
+/* ---------- Back to top ---------- */
+.back-to-top{ background:var(--gold) !important; color:var(--ink) !important; }
+.back-to-top:hover{ background:var(--ink) !important; color:var(--gold) !important; }
+
+/* ---------- Accessibility ---------- */
+a:focus-visible, button:focus-visible, .btn:focus-visible, .nav-link:focus-visible{
+    outline:3px solid var(--gold-deep);
+    outline-offset:2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
